@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% block content %}
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Register Date</th>
+            <th scope="col">Age</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <th> {{ student.number }} </th>
+                    <td> {{ student.first_name }} </td>
+                    <td> {{ student.last_name }} </td>
+                    <td> {{ student.register_date }} </td>
+                    <td> {{ student.age }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

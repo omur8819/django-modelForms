@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "main/base.html" %}
+{% block title %}
+  HomePage
+{% endblock title %}
+{% block content %}
   <!-- <form action="http://www.google.com/search" method="GET">
     <input type="text" name="q" placeholder="Title">
     <input type="submit" value="Search">
@@ -25,6 +21,5 @@
   {% endfor %}
   {{ my_list }} -->
 
-    <h1>Home Page</h1>
-</body>
-</html>
+  <h1>Home Page</h1>
+{% endblock content %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import StudentForm, StudentForm2
+from .models import Student
 
 # Create your views here.
 
@@ -10,15 +11,17 @@ def home_view(request):
     # print(request.user)
     # print(request.path)
     # print(request.method)
-    form = StudentForm2()
-    context = {
-        'title': 'title',
-        'dict_1': { 'django': 'best framework' },
-        'my_list': [ 2, 3, 4, 5 ],
-        'template': '<h3>title</h3>',
-        'form': form 
-    }
-    return render(request, "main/home.html", context)
+    # form = StudentForm2()
+    # context = {
+    #     'title': 'title',
+    #     'dict_1': { 'django': 'best framework' },
+    #     'my_list': [ 2, 3, 4, 5 ],
+    #     'template': '<h3>title</h3>',
+    #     'form': form 
+    # }
+    # return render(request, "main/home.html", context)
+
+    return render(request, "main/home.html")
 
 
 def vehicle_view(request):
@@ -32,4 +35,12 @@ def register_page(request):
 
 def about_view(request):
     return HttpResponse("About Page")
+
+
+def student_list(request):
+    students = Student.objects.all()
+    context = {
+        'students': students,
+    }
+    return render(request, 'main/student_list.html', context)
 
